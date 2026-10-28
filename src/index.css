@@ -1,0 +1,141 @@
+/* ===== Paleta (igual que el favicon) ===== */
+:root {
+  --violeta: #6d28d9;
+  --violeta-oscuro: #4c1d95;
+  --violeta-claro: #c4b5fd;
+  --violeta-suave: #ede9fe;
+  --fondo: #f5f3ff;
+  --blanco: #ffffff;
+  --texto: #1f1535;
+  --texto-suave: #5b5375;
+  --radio: 14px;
+  --sombra: 0 8px 24px rgba(76, 29, 149, 0.12);
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Encabezado ===== */
+header {
+  background: linear-gradient(135deg, var(--violeta), var(--violeta-oscuro));
+  color: var(--blanco);
+  padding: 48px 24px 56px;
+  text-align: center;
+  border-radius: 0 0 28px 28px;
+  box-shadow: var(--sombra);
+}
+
+header h1 {
+  font-size: 2.4rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+header p {
+  color: var(--violeta-claro);
+  font-size: 1.05rem;
+}
+
+/* ===== Presentación (tarjeta) ===== */
+section {
+  background: var(--blanco);
+  max-width: 560px;
+  width: calc(100% - 32px);
+  margin: -28px auto 40px;
+  padding: 32px;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  border-top: 6px solid var(--violeta);
+}
+
+section h2 {
+  color: var(--violeta);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+section p {
+  margin-bottom: 10px;
+  color: var(--texto-suave);
+}
+
+section strong {
+  color: var(--texto);
+}
+
+/* Lista de tecnologías con "checks" como en el ícono */
+section ul {
+  list-style: none;
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+section li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--violeta-suave);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: transform 0.15s, background 0.15s;
+}
+
+section li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: var(--violeta);
+  color: var(--blanco);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+section li:hover {
+  background: var(--violeta-claro);
+  transform: translateX(4px);
+}
+
+/* ===== Pie ===== */
+footer {
+  margin-top: auto;
+  background: var(--violeta-oscuro);
+  color: var(--violeta-claro);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* ===== Celular ===== */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 24px 20px;
+  }
+}
