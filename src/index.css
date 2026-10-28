@@ -140,6 +140,8 @@ main {
 
 .tarea {
   justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
 }
 
 .tarea__titulo {
