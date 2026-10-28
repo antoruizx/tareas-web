@@ -59,7 +59,7 @@ section {
   background: var(--blanco);
   max-width: 560px;
   width: calc(100% - 32px);
-  margin: -28px auto 40px;
+  margin: 0 auto 24px;
   padding: 32px;
   border-radius: var(--radio);
   box-shadow: var(--sombra);
@@ -117,6 +117,85 @@ section li::before {
 section li:hover {
   background: var(--violeta-claro);
   transform: translateX(4px);
+}
+
+/* La primera tarjeta se "monta" sobre el encabezado */
+main > section:first-child {
+  margin-top: -28px;
+}
+
+main {
+  padding-bottom: 16px;
+}
+
+/* ===== Tareas ===== */
+.progreso {
+  display: inline-block;
+  background: var(--violeta-suave);
+  color: var(--violeta-oscuro);
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.tarea {
+  justify-content: space-between;
+}
+
+.tarea__titulo {
+  flex: 1;
+}
+
+/* Tarea pendiente: casilla vacía en lugar del check */
+.tarea::before {
+  content: "";
+  box-sizing: border-box;
+  background: var(--blanco);
+  border: 2px solid var(--violeta);
+}
+
+.tarea--completada::before {
+  content: "✓";
+  background: var(--violeta);
+  border: none;
+}
+
+.tarea--completada .tarea__titulo {
+  text-decoration: line-through;
+  color: var(--texto-suave);
+}
+
+.insignia {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.insignia--alta {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.insignia--media {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+.insignia--baja {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.vacio {
+  text-align: center;
+  font-style: italic;
+  padding: 16px;
+  border: 2px dashed var(--violeta-claro);
+  border-radius: 10px;
 }
 
 /* ===== Pie ===== */
